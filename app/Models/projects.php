@@ -13,7 +13,7 @@ class projects extends Model
 
 
 
-    public function catch(){    
+    public function casts(){    
 
 
         return[

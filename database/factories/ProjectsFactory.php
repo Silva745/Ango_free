@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,11 +18,11 @@ class ProjectsFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => collect(fake()->words(5))->json(' '),
-            'description' => htmlspecialchars(fake()->randomHtml()),
+            'title' => ('Titulo'),
+            'description' => ('Descrição'),
             'ends_at' => fake()->dateTimeBetween('now', '+3 days'),
             'status' => fake()->randomElement(['open', 'closed']),
-            'tech_stack'=> fake()->randomElement(['html', 'css', 'js', 'php', 'laravel']),
+            'tech_stack' => fake()->randomElements(['html', 'css', 'js', 'php', 'laravel'], random_int(1, 5)),
             'created_by' => User::factory(),
         ];
     }
